@@ -22,6 +22,10 @@ public class ClassRepository {
         }
 
 
+        public Classes getClass(Integer classId) {
+                return classes.stream().filter(classes1 -> classes1.getID().equals(classId)).findFirst().orElse(null);
+        }
+
 
         @PostConstruct
         private void init() {
