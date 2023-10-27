@@ -1,8 +1,26 @@
 package com.scaler.attendance.model;
 
-public record Attendance(
-        Student student,
-        Classes class1,
-        boolean isPresent
-) {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "Attendance")
+public class Attendance{
+        @Id
+        @GeneratedValue
+        @Column
+        Integer id;
+        @ManyToOne
+        Student student;
+        @ManyToOne
+        Classes class1;
+        @Column
+        boolean isPresent;
+
+
 }
+
+
