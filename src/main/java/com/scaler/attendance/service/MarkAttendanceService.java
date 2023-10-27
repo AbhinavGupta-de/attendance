@@ -23,7 +23,7 @@ public class MarkAttendanceService {
         this.studentService = studentService;
     }
 
-    public boolean markAttendance(String studentId, Integer classId, Integer value) {
+    public boolean markAttendance(String rollNumber, Integer classId, Integer value) {
 
         boolean present = value > 4;
 
@@ -31,7 +31,7 @@ public class MarkAttendanceService {
         if(c1.isEmpty()) {
             return false;
         }
-        Optional<Student> student = studentService.getStudent(studentId);
+        Optional<Student> student = studentService.getStudent(rollNumber);
         if(student.isEmpty()) {
             return false;
         }

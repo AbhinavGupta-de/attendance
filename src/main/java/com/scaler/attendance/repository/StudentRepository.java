@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+
 public interface StudentRepository extends JpaRepository<Student, String> {
 
-        Optional<Student> findByStudentId(String studentId);
+        Optional<Student> findByRollNumber(String rollNumber);
 }

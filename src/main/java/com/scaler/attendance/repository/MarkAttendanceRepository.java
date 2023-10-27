@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+
 public interface MarkAttendanceRepository extends JpaRepository<Attendance, Integer> {
 
 
