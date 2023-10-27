@@ -1,12 +1,26 @@
 package com.scaler.attendance.model;
 
-public record User(
-        String name,
-        String email,
-        String password,
-        String role
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-        // User Profile Pic
-        // User Banner Pic
-) {
+@Entity
+@Getter
+@Setter
+@Table(name = "User")
+
+
+public class User{
+    @Id
+    @GeneratedValue
+    Integer id;
+    @Column
+    String name;
+    @Column
+    String email;
+    @Column
+    String password;
+    @Column
+    String role;
 }
+
