@@ -11,10 +11,25 @@ import java.util.*;
 public class ClassService {
 
 
-        @Autowired
-        private ClassRepository classRepository;
+    // Methods that we need
+    // 1) Get all classes for a particular date
+    // 2) Get a particular class
 
-        public Optional<List<Classes>> getClasses(Integer date) {
-            return classRepository.getClasses(date);
+
+
+
+    @Autowired
+        private final ClassRepository classRepository;
+
+        public ClassService(ClassRepository classRepository) {
+            this.classRepository = classRepository;
+        }
+
+        public Optional<List<Classes>> getClasses(String date) {
+            return classRepository.findByDate(date);
+        }
+
+        public Optional<Classes> getClass(Integer id) {
+            return classRepository.findById(id);
         }
 }

@@ -24,9 +24,16 @@ public class ClassController {
     // Valid our date
     // TODO - 1. Check if date is valid
 
+    // localhost:8080/api/class/2020-01-01`
+
     @GetMapping("/{date}")
-    public Optional<List<Classes>> getClasses(@PathVariable Integer date) {
+    public Optional<List<Classes>> getClasses(@PathVariable String date) {
         return classService.getClasses(date);
+    }
+
+    @GetMapping("/class/{id}")
+    public Optional<Classes> getClass(@PathVariable Integer id) {
+        return classService.getClass(id);
     }
 }
 
