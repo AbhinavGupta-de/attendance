@@ -13,7 +13,6 @@ public class StudentService {
     // Methods that we need
     // 1) Get students with a particular ID
     // 2) Add students to the database(future scope)
-
     @Autowired
     private final StudentRepository studentRepository;
 
@@ -21,7 +20,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public Optional<Student> getStudent(String studentId) {
-        return studentRepository.findByStudentId(studentId);
+    public Optional<Student> getStudent(String rollNumber) {
+        return studentRepository.findByRollNumber(rollNumber);
     }
 }

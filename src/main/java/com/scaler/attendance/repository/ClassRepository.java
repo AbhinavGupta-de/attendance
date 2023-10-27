@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+
 public interface ClassRepository extends JpaRepository<Classes, Integer> {
     Optional<List<Classes>> findByDate(String date);
 }

@@ -7,18 +7,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/mark-attendance")
 public class MarkAttendanceController {
 
     @Autowired
-    private MarkAttendanceService markAttendanceService;
+    private final MarkAttendanceService markAttendanceService;
 
-    @PostMapping("/{studentId}/{classId}/{value}")
-    public String markAttendance(@PathVariable String studentId, @PathVariable Integer classId, @PathVariable Integer value) {
-        if(markAttendanceService.markAttendance(studentId, classId, value)) {
+    public MarkAttendanceController(MarkAttendanceService markAttendanceService) {
+        this.markAttendanceService = markAttendanceService;
+    }
+
+    @PostMapping("/{rollNumber}/{classId}/{value}")
+    public String markAttendance(@PathVariable String rollNumber, @PathVariable Integer classId, @PathVariable Integer value) {
+        if(markAttendanceService.markAttendance(rollNumber, classId, value)) {
             return "Attendance marked successfully";
         }
         else {
