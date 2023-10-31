@@ -11,17 +11,8 @@ import java.util.*;
 @Service
 public class ClassService {
 
-
-    // Methods that we need
-    // 1) Get all classes for a particular date
-    // 2) Get a particular class
-
-
-
-
     @Autowired
         private final ClassRepository classRepository;
-
     @Autowired
         private final SubjectService subjectService;
 

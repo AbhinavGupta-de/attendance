@@ -1,14 +1,12 @@
 package com.scaler.attendance.controller;
 
 import com.scaler.attendance.helper.ClassData;
-import com.scaler.attendance.helper.KeyValues;
 import com.scaler.attendance.model.Classes;
 import com.scaler.attendance.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 // /api/class/2020-01-01
