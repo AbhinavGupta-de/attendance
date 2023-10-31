@@ -1,16 +1,27 @@
 package com.scaler.attendance.model;
 
-public record Classes(
-        Integer id,
-        String date,
-        Subject subject,
-        String startTime,
-        String endTime,
-        String mode,
-        String location
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-) {
-    public Integer getID() {
-        return id;
-    }
+@Entity
+@Setter
+@Getter
+@Table(name = "Classes")
+
+public class Classes{
+    @Id
+    Integer id;
+    @Column
+    String date;
+    @ManyToOne
+    Subject subject;
+    @Column
+    String startTime;
+    @Column
+    String endTime;
+    @Column
+    String mode;
+    @Column
+    String location;
 }

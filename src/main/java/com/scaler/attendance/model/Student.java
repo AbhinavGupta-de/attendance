@@ -1,13 +1,20 @@
 package com.scaler.attendance.model;
 
-public record Student(
-        User user,
-        // rollNumber -> 23BCS10090
-        String rollNumber,
-        String batch
-) {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-    public String getStudentID() {
-        return rollNumber;
-    }
+@Entity
+@Getter
+@Setter
+@Table(name = "Student")
+public class Student{
+    @ManyToOne
+    User user;
+
+    // rollNumber -> 23BCS10090
+    @Id
+    String rollNumber;
+    @Column
+    String batch;
 }
