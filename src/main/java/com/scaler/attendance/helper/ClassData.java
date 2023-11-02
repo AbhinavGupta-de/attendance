@@ -25,8 +25,5 @@ public class ClassData {
     @JsonProperty("mode")
     private String mode;
 
-
-
-    // Getter and Setter methods
 }
 

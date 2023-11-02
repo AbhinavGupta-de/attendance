@@ -38,7 +38,7 @@ public class ClassService {
 
             try{
 
-                if(!subjectService.getSubject(subject).isPresent()){
+                if(subjectService.getSubject(subject).isEmpty()){
                     return false;
                 }
 

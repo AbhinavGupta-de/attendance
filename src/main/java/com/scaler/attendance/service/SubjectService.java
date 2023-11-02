@@ -14,6 +14,7 @@ public class SubjectService {
     public SubjectService(SubjectRepository subjectRepository) {
         this.subjectRepository = subjectRepository;
     }
+
     public Optional<Subject> getSubject(String name) {
         return subjectRepository.findByName(name);
     }
@@ -25,7 +26,7 @@ public class SubjectService {
         try{
             Subject subject = new Subject();
             subject.setName(name);
-            subject.setId(01);
+            subject.setId(1);
             subjectRepository.save(subject);
             return true;
         }catch (Exception e){
