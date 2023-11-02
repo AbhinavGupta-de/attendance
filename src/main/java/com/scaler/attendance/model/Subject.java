@@ -1,9 +1,6 @@
 package com.scaler.attendance.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +11,7 @@ import lombok.Setter;
 public class Subject{
     // 1 ICP 2 CLI 3 Maths 4 English
     @Id
+    @GeneratedValue
     Integer id;
     @Column
     String name;

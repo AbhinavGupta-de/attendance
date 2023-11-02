@@ -3,12 +3,9 @@ package com.scaler.attendance.controller;
 import com.scaler.attendance.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/api/subject")
 public class SubjectController {
 
@@ -23,9 +20,11 @@ public class SubjectController {
 
     public String addSubject(@PathVariable String name) {
         if (subjectService.addSubject(name)) {
-            return "Subject added successfully";
+            String msg1 = "Subject added successfully";
+            return msg1;
         } else {
-            return "Subject not added";
+            String msg = "Subject not added";
+            return msg;
         }
     }
 }
