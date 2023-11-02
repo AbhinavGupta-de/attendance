@@ -26,7 +26,7 @@ public class SubjectService {
         try{
             Subject subject = new Subject();
             subject.setName(name);
-            subject.setId(1);
+
             subjectRepository.save(subject);
             return true;
         }catch (Exception e){

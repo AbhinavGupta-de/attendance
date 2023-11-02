@@ -17,7 +17,7 @@ public class StudentService {
     // 2) Add students to the database(future scope)
     @Autowired
     private final StudentRepository studentRepository;
-
+    @Autowired
     private final UserRepository userRepository;
 
     public StudentService(StudentRepository studentRepository, UserRepository userRepository) {
